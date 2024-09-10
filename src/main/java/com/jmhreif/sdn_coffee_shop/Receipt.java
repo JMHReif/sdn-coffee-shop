@@ -5,7 +5,8 @@ import org.springframework.data.neo4j.core.schema.*;
 @RelationshipProperties
 public class Receipt {
     @RelationshipId
-    Long id;
+    @GeneratedValue
+    String id;
 
     Double orderTotal;
 
