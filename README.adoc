@@ -4,7 +4,7 @@ This is an example application using Spring Data Neo4j, Neo4j, and coffee shop d
 
 == Data set
 
-Data is maintained and pulled from a public data source. Originally from a Kaggle repository (unclean), cleaned version available in this repository's load-data.cypher script. An example of the data model is shown below.
+Data is maintained and pulled from a public data source. Originally from a Kaggle repository (unclean), cleaned version available in https://github.com/JMHReif/graph-demo-datasets/tree/main/coffee-shop[this repository's^] load-data.cypher script. An example of the data model is shown below.
 
 image::src/main/resources/coffee-shop-data-model.png[]
 
