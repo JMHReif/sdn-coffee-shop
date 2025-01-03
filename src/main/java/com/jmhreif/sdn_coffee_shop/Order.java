@@ -11,20 +11,22 @@ import java.time.LocalTime;
 public class Order {
     @Id
     String transactionId;
-    String orderNumber;
+    String orderId;
     LocalDate orderDate;
     LocalTime orderTime;
+    String inStore;
 
     @Relationship(value = "BOUGHT", direction = Relationship.Direction.INCOMING)
     Receipt receiptAndCustomer;
     @Relationship(value = "SOLD", direction = Relationship.Direction.INCOMING)
-    Employee employee;
+    Staff staff;
 
-    public Order(String transactionId, String orderNumber, LocalDate orderDate, LocalTime orderTime) {
+    public Order(String transactionId,  String orderId, LocalDate orderDate, LocalTime orderTime, String inStore) {
         this.transactionId = transactionId;
-        this.orderNumber = orderNumber;
+        this.orderId = orderId;
         this.orderDate = orderDate;
         this.orderTime = orderTime;
+        this.inStore = inStore;
     }
 
     public String getTransactionId() {
@@ -35,12 +37,12 @@ public class Order {
         this.transactionId = transactionId;
     }
 
-    public String getOrderNumber() {
-        return orderNumber;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public void setOrderNumber(String orderNumber) {
-        this.orderNumber = orderNumber;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public LocalDate getOrderDate() {
@@ -59,6 +61,14 @@ public class Order {
         this.orderTime = orderTime;
     }
 
+    public String getInStore() {
+        return inStore;
+    }
+
+    public void setInStore(String inStore) {
+        this.inStore = inStore;
+    }
+
     public Receipt getReceiptAndCustomer() {
         return receiptAndCustomer;
     }
@@ -67,11 +77,11 @@ public class Order {
         this.receiptAndCustomer = receiptAndCustomer;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public Staff getStaff() {
+        return staff;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setStaff(Staff staff) {
+        this.staff = staff;
     }
 }

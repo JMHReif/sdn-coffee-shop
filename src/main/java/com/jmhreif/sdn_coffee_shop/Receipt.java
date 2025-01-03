@@ -5,16 +5,17 @@ import org.springframework.data.neo4j.core.schema.*;
 @RelationshipProperties
 public class Receipt {
     @RelationshipId
-    @GeneratedValue
     String id;
 
+    Integer itemsInOrder;
     Double orderTotal;
 
     @TargetNode
     Customer customer;
 
-    public Receipt(Double orderTotal, Customer customer) {
+    public Receipt(Double orderTotal, Integer itemsInOrder, Customer customer) {
         this.orderTotal = orderTotal;
+        this.itemsInOrder = itemsInOrder;
         this.customer = customer;
     }
 
@@ -24,6 +25,14 @@ public class Receipt {
 
     public void setOrderTotal(Double orderTotal) {
         this.orderTotal = orderTotal;
+    }
+
+    public Integer getItemsInOrder() {
+        return itemsInOrder;
+    }
+
+    public void setItemsInOrder(Integer itemsInOrder) {
+        this.itemsInOrder = itemsInOrder;
     }
 
     public Customer getCustomer() {
